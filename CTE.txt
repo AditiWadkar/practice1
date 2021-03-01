@@ -1,0 +1,28 @@
+CTE 
+
+with CTE
+ AS
+ (
+     SELECT county_name,total_hospital_beds from bigquery-public-data.covid19_aha.hospital_beds
+)
+
+select count(total_hospital_beds) as total_beds 
+from CTE;
+
+
+
+with hospital 
+AS
+(
+    
+     SELECT county_name,total_hospital_beds from bigquery-public-data.covid19_aha.hospital_beds
+)
+,
+staff AS(
+     select  total_hospital_unit_personnel_ft,physicians_and_dentists_ft from bigquery-public-data.covid19_aha.staffing
+)
+
+select  (total_hospital_beds) as total_beds from hospital
+UNION all 
+select count(physicians_and_dentists_ft) as total_staff from staff ;
+

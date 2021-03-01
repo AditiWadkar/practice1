@@ -1,0 +1,32 @@
+q 2  Create view A as ( select * from Transaction_Date ) Union All (seect * from Product_details)
+
+	select * from A
+where sales>100 && transaction _Date BETWEEN "1/1/2019" AND "1/10/2019
+
+
+
+
+Q 5  select * from transaction_details
+	order by sales desc
+
+	select id,sales from transaction 1
+	where id <= 5;
+
+ for bottom 10 records instead of desc we will sort the data in ascending
+
+
+Q8 select * from table name 
+	where date= (select MAX(date) from table name);
+ 
+
+Q9 query will run and provide distinct values as a output
+
+
+
+
+
+
+
+TAb 3 - explore BU_Name
+
+tab 2 - explore transaction_details
